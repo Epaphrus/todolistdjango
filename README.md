@@ -1,4 +1,6 @@
 # todolistdjango
 
-![Screenshot 2023-12-03 223539](https://github.com/Epaphrus/todolistdjango/assets/83645259/a32b4072-d6cd-42fe-9841-867539629ba5)
-![Screenshot 2023-12-03 223505](https://github.com/Epaphrus/todolistdjango/assets/83645259/634a9a6b-d3d5-469b-a025-ce503182924f)
+A SIMPLE TO DO APP THAT USE SQLLITE BUILD USING PYTHON AND DJANGO
+
+![Screenshot 2023-12-03 223841](https://github.com/Epaphrus/todolistdjango/assets/83645259/7137bd74-5922-447a-bc34-6af6b70e8d65)
+![Screenshot 2023-12-03 223727](https://github.com/Epaphrus/todolistdjango/assets/83645259/5f293f2d-a848-41c4-a8e8-812d5273f60b)
