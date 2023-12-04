@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dishify</title>
+    <style>
+        .navigation{
+          font-family: SourceSansPro,Helvetica,sans-serif !important;
+          font-size: .875rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          line-height: 1.25rem;
+          text-transform: uppercase;
+          text-underline-offset: .25rem;
+          color: white !important;
+          z-index: 1030;
+        }
+        .overlay-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff; /* Set the color of your text */
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+{#BEGINNING OF NAVBAR#}
+<div class="navigation">
+    <nav class="navbar navbar-expand-lg bg-body-white fixed-top justify-content-center shadow-sm p-3 mb-0 bg-body">
+      <div class="container-xl">
+        <a class="navbar-brand" href="{% url 'homepage' %}">Dishify</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: SourceSansPro,Helvetica,sans-serif !important;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'meals' %}">MEALS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'ingredients' %}">INGREDIENTS</a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'recipe' %}">ADD RECIPE</a>
+            </li>
+{#            <li class="nav-item dropdown">#}
+{#              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                Dropdown#}
+{#              </a>#}
+{#              <ul class="dropdown-menu">#}
+{#                <li><a class="dropdown-item" href="#">Action</a></li>#}
+{#                <li><a class="dropdown-item" href="#">Another action</a></li>#}
+{#                <li><hr class="dropdown-divider"></li>#}
+{#                <li><a class="dropdown-item" href="#">Something else here</a></li>#}
+{#              </ul>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#              <a class="nav-link disabled" aria-disabled="true">Disabled</a>#}
+{#            </li>#}
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+</div>
+{#END OF NAVIGATION BAR#}
+
+{#BEGINNING OF THE BODY SECTION#}
+{#<div class="bg-light" style="margin-left: 12%; margin-right: 12%; height: 100%; margin-top: 74px">#}
+{#    <p class="fs-4 text-center text-decoration-underline">You can add your recipe here</p>#}
+{#    <form class="p-5">#}
+{#      <div class="mb-3">#}
+{#        <label for="enterItem1" class="form-label">Item 1</label>#}
+{#        <input type="text" class="form-control">#}
+{#        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>#}
+{#      </div>#}
+{#      <div class="mb-3">#}
+{#        <label for="exampleInputPassword1" class="form-label">Password</label>#}
+{#        <input type="password" class="form-control" id="exampleInputPassword1">#}
+{#      </div>#}
+{#      <div class="mb-3 form-check">#}
+{#        <input type="checkbox" class="form-check-input" id="exampleCheck1">#}
+{#        <label class="form-check-label" for="exampleCheck1">Check me out</label>#}
+{#      </div>#}
+{#      <button type="submit" class="btn btn-primary">Submit</button>#}
+{#    </form>#}
+{#</div>#}
+
+
+<div style="margin-top: 90px">
+    <p class="fs-4 text-center text-decoration-underline">You can add your recipe here using the form below</p>
+{#        <h2>Recipe Input Form</h2>#}
+
+    <form id="recipeForm">
+        <label for="recipeName">Recipe Name:</label>
+        <input type="text" id="recipeName" name="recipeName" required>
+
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions" name="instructions" rows="6" required></textarea>
+
+        <button style="background-color: black" type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            // You can add code here to handle the form submission
+            // For example, you might want to send the data to a server or perform some validation.
+            // For this example, we'll simply log the form data to the console.
+            var formData = {
+                recipeName: document.getElementById('recipeName').value,
+                ingredients: document.getElementById('ingredients').value,
+                instructions: document.getElementById('instructions').value
+            };
+
+            console.log(formData);
+            // You can replace the console.log with your actual form submission logic.
+        }
+    </script>
+</div>
+
+
+
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

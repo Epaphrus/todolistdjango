@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dishify</title>
+    <style>
+        .navigation{
+          font-family: SourceSansPro,Helvetica,sans-serif !important;
+          font-size: .875rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          line-height: 1.25rem;
+          text-transform: uppercase;
+          text-underline-offset: .25rem;
+          color: white !important;
+          z-index: 1030;
+        }
+    </style>
+</head>
+<body>
+{#BEGINNING OF NAVBAR#}
+<div class="navigation">
+    <nav class="navbar navbar-expand-lg bg-body-white fixed-top justify-content-center shadow-sm p-3 mb-0 bg-body">
+      <div class="container-xl">
+        <a class="navbar-brand" href="{% url 'homepage' %}">Dishify</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: SourceSansPro,Helvetica,sans-serif !important;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'meals' %}">MEALS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'ingredients' %}">INGREDIENTS</a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="{% url 'recipe' %}">ADD RECIPE</a>
+            </li>
+{#            <li class="nav-item dropdown">#}
+{#              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                Dropdown#}
+{#              </a>#}
+{#              <ul class="dropdown-menu">#}
+{#                <li><a class="dropdown-item" href="#">Action</a></li>#}
+{#                <li><a class="dropdown-item" href="#">Another action</a></li>#}
+{#                <li><hr class="dropdown-divider"></li>#}
+{#                <li><a class="dropdown-item" href="#">Something else here</a></li>#}
+{#              </ul>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#              <a class="nav-link disabled" aria-disabled="true">Disabled</a>#}
+{#            </li>#}
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+</div>
+{#END OF NAVIGATION BAR#}
+
+{#BEGINNING OF THE BODY SECTION#}
+<div class="justify-content-center" style="margin-top: 70px;">
+    <img CLASS="img-fluid" src="{% static 'images/scrn3.png' %}" style="width: 100%; height: 20vh" alt="">
+    <div style="margin-left: 12%; margin-right: 12%; height: 100%" class="bg-light">
+        <p class="fs-4 text-center text-decoration-underline">We have a variety of meals to choose from</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a class="text-decoration-none fs-4" href="">Breakfast</a></li>
+          <li class="list-group-item"><a class="text-decoration-none fs-4" href="">Lunch</a></li>
+          <li class="list-group-item"><a class="text-decoration-none fs-4" href="">Healthy</a></li>
+          <li class="list-group-item"><a class="text-decoration-none fs-4" href="">Salads</a></li>
+          <li class="list-group-item"><a class="text-decoration-none fs-4" href="">Drinks</a></li>
+        </ul>
+        <div class="justify-content-between">
+            <h3 class="text-center pt-3 pb-3">BREAKFAST</h3>
+            <div class="d-flex flex-wrap justify-content-evenly mt-3">
+                <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/cinnamon green tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Cinnamon tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/black-tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Black tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/indian tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Indian tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/masala tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Masala tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/artful tea.webp' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Artful tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/lemon-tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Lemon tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/forest black tea.webp' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Forest Black tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                  <img src="{% static 'images/winsland tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h5 class="card-title">Winsland tea</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+            <div>
+                <h3 class="text-center pt-3 pb-3">LUNCH</h3>
+                    <div class="d-flex flex-wrap justify-content-evenly mt-3">
+                    <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/cinnamon green tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Cinnamon tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                    <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/black-tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Black tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                    <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/indian tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Indian tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                    <div class="card border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/masala tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Masala tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                    <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/artful tea.webp' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Artful tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                    <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/lemon-tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Lemon tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                    <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/forest black tea.webp' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Forest Black tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                    <div class="card mt-3 border-0 shadow-sm bg-body rounded" style="width: 18rem; height: 25rem">
+                      <img src="{% static 'images/winsland tea.jpg' %}" style="height: 240px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                           <h5 class="card-title">Winsland tea</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+            </div>
+        </div>
+            <div>
+            <h3 class="text-center">HEALTHY</h3>
+        </div>
+            <div>
+            <h3 class="text-center">SALADS</h3>
+        </div>
+            <div>
+            <h3 class="text-center">DRINKS</h3>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

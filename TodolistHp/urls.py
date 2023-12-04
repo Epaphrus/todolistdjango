@@ -20,8 +20,12 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.task_list, name='task_list'),
+    # path('', views.task_list, name='task_list'),
+    path('', views.home, name='homepage'),
+    path('ingredients/', views.ingredients, name='ingredients'),
+    path('meals/', views.meals, name='meals'),
+    path('recipe', views.recipe, name='recipe'),
     path('task/create', views.create_task, name='create_task'),
     path('task/update/<int:id>', views.update_task, name='update_task'),
-    path('task/delete/<int:id>', views.delete_task, name='delete_task')
+    path('task/delete/<int:id>', views.delete_task, name='delete_task'),
 ]

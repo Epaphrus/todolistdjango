@@ -3,6 +3,22 @@ from .models import Task
 from .forms import TaskForm
 
 
+def home(request):
+    return render(request, 'hom.html')
+
+
+def recipe(request):
+    return render(request, 'recipe.html.html')
+
+
+def ingredients(request):
+    return render(request, 'ingredients.html')
+
+
+def meals(request):
+    return render(request, 'meals.html')
+
+
 def task_list(request):
     tasks = Task.objects.all()
     return render(request, 'index.html', {'tasks': tasks})
