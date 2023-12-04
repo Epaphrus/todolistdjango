@@ -1,20 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Task Form</title>
+    <title>Recipe</title>
+    <style>
+         .navigation{
+          font-family: SourceSansPro,Helvetica,sans-serif !important;
+          font-size: .875rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          line-height: 1.25rem;
+          text-transform: uppercase;
+          text-underline-offset: .25rem;
+          color: white !important;
+          z-index: 1030;
+        }
+        .overlay-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff; /* Set the color of your text */
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-<h1>Task Form</h1>
-<form action="/task/create" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
-</form>
-<a href="{% url 'task_list' %}">Back to Task List</a>
+{#BEGINNING OF NAVBAR#}
+<div class="navigation">
+    <nav class="navbar navbar-expand-lg bg-body-white fixed-top justify-content-center shadow-sm p-3 mb-0 bg-body">
+      <div class="container-xl">
+        <a class="navbar-brand" href="{% url 'homepage' %}">Dishify</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: SourceSansPro,Helvetica,sans-serif !important;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'meals' %}">MEALS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'ingredients' %}">INGREDIENTS</a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="{% url 'recipe' %}">ADD RECIPE</a>
+            </li>
+{#            <li class="nav-item dropdown">#}
+{#              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                Dropdown#}
+{#              </a>#}
+{#              <ul class="dropdown-menu">#}
+{#                <li><a class="dropdown-item" href="#">Action</a></li>#}
+{#                <li><a class="dropdown-item" href="#">Another action</a></li>#}
+{#                <li><hr class="dropdown-divider"></li>#}
+{#                <li><a class="dropdown-item" href="#">Something else here</a></li>#}
+{#              </ul>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#              <a class="nav-link disabled" aria-disabled="true">Disabled</a>#}
+{#            </li>#}
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+</div>
+{#END OF NAVIGATION BAR#}
+<div>
+    <h1>Recipe</h1>
+    <form action="/task/create" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+<a href="{% url 'task_list' %}">Back to my added recipe</a>
+</div>
 
 </body>
 </html>

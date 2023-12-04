@@ -7,10 +7,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Task List</title>
+    <title>Recipe</title>
 </head>
 <body>
-<h1>Task List</h1>
+<h1>My added recipe</h1>
 
 <ul>
     {% for task in tasks %}
@@ -21,7 +21,7 @@
     {% endfor %}
 
 </ul>
-<a href="{% url 'create_task' %}">Create New Task</a>
+<a href="{% url 'create_task' %}">Add recipe</a>
 
 </body>
 </html>

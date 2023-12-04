@@ -8,7 +8,7 @@ def home(request):
 
 
 def recipe(request):
-    return render(request, 'recipe.html.html')
+    return render(request, 'recipe.html')
 
 
 def ingredients(request):
